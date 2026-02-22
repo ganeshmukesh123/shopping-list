@@ -1,0 +1,106 @@
+/* Overlay */
+.lp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.lp-modal {
+  width: 920px;
+  max-width: calc(100vw - 32px);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Header */
+.lp-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.lp-modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lp-modal-close {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Summary cards */
+.lp-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.lp-summary-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.lp-summary-title {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.lp-summary-value {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1677ff;
+  margin-bottom: 6px;
+}
+
+.lp-summary-footer {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Chart section */
+.lp-chart-section h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.lp-chart-placeholder {
+  height: 280px;
+  border-radius: 8px;
+}
+
+.lp-report-bar {
+  width: 100%;
+  height: 280px;
+
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+.dark {
+  .lp-modal {
+    background: #0d0d0d;
+    .lp-summary-grid {
+      border-color: #333333;
+    }
+  }
+}

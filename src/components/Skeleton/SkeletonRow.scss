@@ -1,0 +1,33 @@
+@keyframes lp-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+.lp-skeleton-row {
+  pointer-events: none;
+}
+
+.lp-skeleton-cell {
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f5f5f5 50%,
+    #ececec 75%
+  );
+  background-size: 800px 100%;
+  animation: lp-shimmer 1.4s infinite linear;
+  width: 70%;
+}
+
+// Dark mode
+.dark .lp-skeleton-cell {
+  background: linear-gradient(
+    90deg,
+    #2a2a3a 25%,
+    #3a3a4a 50%,
+    #2a2a3a 75%
+  );
+  background-size: 800px 100%;
+}

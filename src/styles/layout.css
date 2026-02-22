@@ -1,0 +1,195 @@
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  background-color: #f0f2f5;
+  color: #213547;
+  min-height: 100vh;
+  display: block;
+  place-items: unset;
+}
+
+/* ── Page ─────────────────────────────────────────────────────── */
+.lp-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ── Header ───────────────────────────────────────────────────── */
+.lp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 56px;
+  background: #111827;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  flex-shrink: 0;
+}
+
+.lp-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lp-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.lp-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* ── Sub Header (page title bar) ───────────────────────────────── */
+.lp-sub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.lp-page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+
+  .lp-page-title-icon {
+    font-size: 22px;
+  }
+}
+
+.lp-view-report-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+
+  &:hover {
+    background: #f5f5f5;
+    border-color: #aaa;
+  }
+}
+
+/* ── Main Container ───────────────────────────────────────────── */
+.lp-container {
+  flex: 1;
+  padding: 24px 28px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.lp-item-name {
+  .lp-item-new-badge {
+    font-size: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    padding: 0px 4px;
+    margin: 0 0 0px 8px;
+  }
+}
+
+/* ── Shared Buttons ───────────────────────────────────────────── */
+.lp-btn-primary {
+  height: 36px;
+  padding: 0 18px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #1558b0;
+  }
+}
+
+.lp-btn-outline {
+  height: 36px;
+  padding: 0 14px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s, border-color 0.15s;
+
+  &:hover {
+    background: #f5f5f5;
+    border-color: #aaa;
+  }
+}
+
+/* ── Dark Mode ────────────────────────────────────────────────── */
+.dark {
+  background-color: #0f0f1a;
+  color: #eee;
+
+  .lp-page {
+    background-color: #0f0f1a;
+  }
+
+  .lp-sub-header {
+    background: #1a1a2e;
+    border-color: #333;
+  }
+
+  .lp-page-title { color: #eee; }
+
+  .lp-view-report-btn {
+    background: #1a1a2e;
+    border-color: #444;
+    color: #ccc;
+
+    &:hover { background: #2a2a3a; }
+  }
+
+  .lp-btn-outline {
+    background: #1a1a2e;
+    border-color: #444;
+    color: #ccc;
+
+    &:hover { background: #2a2a3a; }
+  }
+}
