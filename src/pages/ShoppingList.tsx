@@ -1,6 +1,7 @@
 import Table from '../components/Table/Table'
 import { AddItem } from '../components/AddItem/AddItem'
 import { ListHeader } from '../components/ListHeader/ListHeader'
+import Report from '../components/Report/Report'
 import type { ColumnDescriptor } from '../components/Table/types'
 import type { ShoppingItem } from '../types/shopping'
 import { CATEGORY_OPTIONS } from '../data/categories'
@@ -8,6 +9,7 @@ import { useFilter } from '../hooks/useFilter'
 import { useSort } from '../hooks/useSort'
 import { useExport } from '../hooks/useExport'
 import { useFetchShoppingList } from '../hooks/useFetchShoppingList'
+import { useState } from 'react'
 
 const columnDescriptor: ColumnDescriptor<ShoppingItem>[] = [
   {
@@ -85,6 +87,7 @@ export default function ShoppingList({ darkMode }: ShoppingListProps) {
           isLoading, isLoadingMore,
           addItem, loadMore }                         = useFetchShoppingList(filters, sortState)
   const { exportToCSV }                               = useExport(data)
+  const [viewReport, setViewReport] = useState(false)
 
   const darkTableTheme = darkMode ? {
     headerBackground:   '#1a1a2e',
@@ -102,7 +105,7 @@ export default function ShoppingList({ darkMode }: ShoppingListProps) {
           <span className="lp-page-title-icon">🛒</span>
           Shopping List Application
         </div>
-        <button className="lp-view-report-btn">📊 View Report</button>
+        <button className="lp-view-report-btn" onClick={() => setViewReport(true)}>📊 View Report</button>
       </div>
 
       <main className="lp-container">
@@ -134,6 +137,7 @@ export default function ShoppingList({ darkMode }: ShoppingListProps) {
           onLoadMore={loadMore}
         />
       </main>
+      { viewReport && <Report shoppingData={data}  onClose = {() => setViewReport(false)}/>}
     </>
   )
 }
