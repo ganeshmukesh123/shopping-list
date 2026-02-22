@@ -22,7 +22,7 @@ export type PagedResponse<T> = {
 
 // ── Mock data (replace BASE_URL + fetch call when a real API is available) ──
 
-const BASE_URL = '/api/shopping-items'
+// const BASE_URL = '/api/shopping-items'
 
 // Generated once at module load — stable across filter/sort/page changes
 // Names are Item_1 … Item_N, globally unique by index
